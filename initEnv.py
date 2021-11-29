@@ -74,13 +74,20 @@ if __name__ == "__main__":
     localCmd(f'scp zshrc {kuser}@{knode}:~/.zshrc')
 
 
-
-
-
-
     # p = subprocess.Popen(shlex.split(f'ssh root@{knode} \'passwd {kuser}\''), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     # p.stdin.write('Wenhao1998=\n'.encode())
     # p.stdin.write('Wenhao1998=\n'.encode())
     # print(p.communicate()[0].decode())
     # p.wait(timeout=10)
     # p.returncode != 0: raise Exception(p.stdout.decode())
+
+
+    # start = timer()
+    # with Popen("bash ./start_client.sh " + str(s_th) + " " + str(c_th), shell=True, stdout=PIPE, preexec_fn=os.setsid) as process:
+    #     try:
+    #         output = process.communicate(timeout=60 * 8)[0]
+    #     except TimeoutExpired:
+    #         os.killpg(process.pid, signal.SIGINT) # send signal to the process group
+    #         output = process.communicate()[0]
+    #     print('Elapsed seconds: {:.2f}'.format(timer() - start))
+    
